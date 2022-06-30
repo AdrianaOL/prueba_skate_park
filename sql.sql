@@ -4,4 +4,4 @@ VARCHAR(25) NOT NULL, password VARCHAR(25) NOT NULL, anos_experiencia
 INT NOT NULL, especialidad VARCHAR(50) NOT NULL, foto VARCHAR(255) NOT
 NULL, estado BOOLEAN NOT NULL);
 
-insert into skaters (email, nombre, password, anos_experiencia, especialidad, foto, estado) values ('maria@email.com', 'Maria', '12345', 3, 'skate', 'foto.jpg', true);
+insert into skaters (email, nombre, password, anos_experiencia, especialidad, foto, estado) values ('maria@email.com', 'Maria', '12345', 3, 'skate', 'foto.jpg', true);\

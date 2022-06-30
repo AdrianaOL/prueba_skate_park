@@ -1,4 +1,5 @@
 const express = require('express')
+const {SkatersGet} = require('./queries')
 const app = express()
 const { engine } = require('express-handlebars')
 const {
@@ -43,10 +44,11 @@ app.use('/public', express.static(__dirname + '/public'))
 
 app.use('/img', express.static(__dirname + '/img'))
 
-app.get('/',  (req, res) => {
+app.get('/',  async (req, res) => {
+	const getData = await SkatersGet()
 	res.render('Inicio', {
 		layout: 'Inicio',
-		getSkaters,
+		getData: getData,
 	})
 })
 // Handlebars

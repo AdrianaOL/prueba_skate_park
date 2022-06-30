@@ -5,7 +5,7 @@ async function SkatersGet() {
     const result = await pool.query(
       `SELECT * FROM skaters `
     )
-    console.log(result)
+    
     return result.rows
     
   } catch (e) {
@@ -20,7 +20,6 @@ async function SkatersPost(body) {
       `INSERT INTO skaters (email, nombre, password, anos_experiencia, especialidad, foto, estado) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *`,
       [email, nombre, password, anos_experiencia, especialidad, foto, estado]
     )
-    console.log(result)
     return result.rows
   } catch (error) {
     console.log(error)

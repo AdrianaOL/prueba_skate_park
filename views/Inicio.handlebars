@@ -33,17 +33,16 @@
           </tr>
         </thead>
         <tbody>
+           {{#each getData}}
           <tr>
-            {{#each getSkaters}}
-            <th scope="row">1</th>
-            <td><div></div></td>
+            <th scope="row">{{this.id}}</th>
+            <td> <img src="/img/{{this.foto}}" style="width: 80px;" srcset=""></td>
             <td>{{this.nombre}}</td>
-            <td>12</td>
-            <td>Kickflip</td>
-            <td class="text-success font-weight-bold">Aprobado</td>
-             {{/each}}
+            <td>{{this.anos_experiencia}}</td>
+            <td>{{this.especialidad}}</td>
+            <td class="text-success font-weight-bold">{{this.estado}}</td>
           </tr>
-          
+            {{/each}}
         </tbody>
       </table>
       <a href="#">Iniciar Sesión</a> |
