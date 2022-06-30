@@ -10,9 +10,11 @@ const {
 } = require('./functions')
 
 
-const bodyParser = require('body-parser')
-app.use(bodyParser.urlencoded({ extended: true }))
-app.use(bodyParser.json())
+// const bodyParser = require('body-parser')
+// app.use(bodyParser.urlencoded({ extended: true }))
+// app.use(bodyParser.json())
+app.use(express.json())
+app.use(express.urlencoded({extended: true}))
 
 app.use(express.static('public'))
 
@@ -46,10 +48,13 @@ app.use('/img', express.static(__dirname + '/img'))
 
 app.get('/',  async (req, res) => {
 	const getData = await SkatersGet()
-	res.render('Inicio', {
-		layout: 'Inicio',
+	res.render('concursantes', {
 		getData: getData,
 	})
+})
+
+app.get('/registro',  async (req, res) => {
+	res.render('Registro')
 })
 // Handlebars
 

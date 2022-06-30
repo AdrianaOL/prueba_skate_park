@@ -13,8 +13,8 @@ async function SkatersGet() {
   }
 }
 
-async function SkatersPost(body) {
-  const { email, nombre, password, anos_experiencia, especialidad, foto, estado } = body
+async function SkatersPost(body, estado = false) {
+  const { email, nombre, password, anos_experiencia, especialidad, foto } = body
   try {
     const result = await pool.query(
       `INSERT INTO skaters (email, nombre, password, anos_experiencia, especialidad, foto, estado) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *`,

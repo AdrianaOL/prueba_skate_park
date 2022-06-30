@@ -16,6 +16,7 @@ const getSkaters = async (req, res) => {
 
 const postSkaters = async (req, res) => {
 	const body = req.body
+	console.log('este es el body', body)
 	try {
 		const response = await SkatersPost(body)
 		res.json(response)
